@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  db:
+    image: mariadb:latest
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_PSWD}
+      MARIADB_PASSWORD: ${DB_PSWD}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_DATABASE: ${DB_NAME}
+    ports:
+      - "9887:3306"
+
+  php-fpm-gd:
+    image: heid/php-fpm-gd
+    build:
+      context: docker/dockerfiles/fpm
+      args:
+        UID: ${UID}
+    env_file: ['.env']
+    entrypoint: ['/start.sh']
+    ports:
+      - "8080:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ${PWD}/docker/fpm/symfony.env:/var/www/symfony.env
+      - ${PWD}/docker/supervisor/supervisord.conf:/etc/supervisord.conf
+      - ${PWD}/docker/fpm/symfony.ini:/usr/local/etc/php/conf.d/symfony.ini
+      - ${PWD}/docker/fpm/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+      - ${PWD}/docker/nginx/symfony.conf:/etc/nginx/http.d/default.conf
+      - ${PWD}/app:/var/www/app

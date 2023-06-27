@@ -14,7 +14,7 @@
     - "mic" - 150 * 150
 
 2. Файлы в app/public/images могут быть произвольного размера.
-3. Файлы в app/public/cached могут должны соотв. требуемым размерам и быть доступны через api: /cache?name=&size
+3. Файлы в app/public/cached должны соотв. требуемым размерам и быть доступны через api: /cache?name=&size
 4. формат имени файлов в images: $name.$type, в cached: $name_$size.$type
 
 

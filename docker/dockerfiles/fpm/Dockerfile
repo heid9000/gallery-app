@@ -26,6 +26,9 @@ RUN wget https://getcomposer.org/composer-stable.phar -O /usr/local/bin/composer
 ARG UID
 RUN adduser -h /var/www -u $UID -G root -D admin
 
+COPY ./crontab.txt /etc/crontabs/admin
+RUN chmod +rx /etc/crontabs/admin
+
 COPY ./start.sh /start.sh
 RUN chmod +x /start.sh
 

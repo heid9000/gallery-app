@@ -1,0 +1,1 @@
+*/1 * * * * /var/www/app/bin/console app:sync-images

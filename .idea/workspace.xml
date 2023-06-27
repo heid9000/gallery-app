@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5861b6e-a348-4dde-b566-82d259866dae" name="Changes" comment="added imagick ext" />
+    <list default="true" id="f5861b6e-a348-4dde-b566-82d259866dae" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/app/public/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/images/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Command/SyncImagesCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Controller/CacheController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Entity/Cached.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Entity/Dimension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Entity/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Entity/Sizable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/EventListener/ImageChangedSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Repository/CachedImageRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Repository/DimensionRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Repository/ImageRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Request/CacheRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Service/CacheService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Service/ImageService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/dockerfiles/fpm/crontab.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gallery-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gallery-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dockerfiles/fpm/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dockerfiles/fpm/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dockerfiles/fpm/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dockerfiles/fpm/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/supervisor/supervisord.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/supervisor/supervisord.conf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +55,89 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="php-fpm-gd" />
+  <component name="PhpServers">
+    <servers>
+      <server host="0.0.0.0" id="78ed93e4-444c-49a7-bd91-cc2fa4159f80" name="Docker app" port="9000" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/app" remote-root="/var/www/app" />
+        </path_mappings>
+      </server>
+      <server host="domain.tld" id="277aab7c-2ff4-42e0-82fe-9ba50c2ebf3d" name="domain.tld" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/app/public" remote-root="/var/www/app/public" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="php-fpm-gd">
+    <include_path>
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/app/vendor/composer" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/app/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/app/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/app/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/app/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-idn" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="2RYg2y5oUcgnpNzdUNgBgH1MwtQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,20 +145,45 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "Docker Compose",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "Docker Compose",
-    "last_opened_file_path": "/home/heid/Documents/gallery-app",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/heid/Documents/gallery-app/app/public/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.VCS",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/public/images" />
+      <recent name="$PROJECT_DIR$/app/public/cached" />
+      <recent name="$PROJECT_DIR$/app/public" />
+      <recent name="$PROJECT_DIR$/app/public/uploads" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/public/images" />
+      <recent name="$PROJECT_DIR$/app/public/uploads" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" nameIsGenerated="true" filter_connections="FILTER" server_name="Docker app" session_id="PHPSTORM">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +201,18 @@
       <workItem from="1687516292353" duration="286000" />
       <workItem from="1687608693903" duration="4969000" />
       <workItem from="1687626905027" duration="604000" />
-      <workItem from="1687698236299" duration="1011000" />
+      <workItem from="1687698236299" duration="1703000" />
+      <workItem from="1687700770276" duration="6876000" />
+      <workItem from="1687707930706" duration="12917000" />
+      <workItem from="1687723909546" duration="479000" />
+      <workItem from="1687727764118" duration="12336000" />
+      <workItem from="1687743020885" duration="605000" />
+      <workItem from="1687781640988" duration="9330000" />
+      <workItem from="1687791832969" duration="483000" />
+      <workItem from="1687795688384" duration="1389000" />
+      <workItem from="1687860482717" duration="13430000" />
+      <workItem from="1687876940670" duration="5386000" />
+      <workItem from="1687883022276" duration="23938000" />
     </task>
     <task id="LOCAL-00001" summary="fixex">
       <created>1687437656460</created>
@@ -82,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687610821822</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="init">
+      <created>1687699347312</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687699347312</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +251,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixex" />
     <MESSAGE value="added imagick ext" />
-    <option name="LAST_COMMIT_MESSAGE" value="added imagick ext" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/src/Command/SyncImagesCommand.php</url>
+          <line>39</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

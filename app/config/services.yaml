@@ -20,5 +20,11 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\EventListener\ImageChangedSubscriber:
+        tags:
+            - name: 'doctrine.event_subscriber'
+              priority: 100
+              connection: 'default'
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

@@ -5,9 +5,14 @@
 - imagick
 - xdebug
 - mysqli
+- symfony, docker, supervisord, mariadb, cron, alpine
+
+## Требования
+- docker
+- docker-compose
+- make
 
 ## О проекте
-0. Стэк: Symfony 6, Mariadb, Docker, Supervisord, Cron
 1. Список размеров для конвертера:
     - "big" - 800 * 600
     - "med" - 640 * 480

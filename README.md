@@ -20,8 +20,9 @@
 
 
 ## Запуск и проверка
-1. Запустить: `make rebuild`
-2. После запуска ресурс находится по адрессу `http://localhost:8080`
+1. `make rebuild`
+2. `make install`
+3. После запуска ресурс находится по адрессу `http://localhost:8080`
 
 ## API
 - http://localhost:8080/cache?name=image_name&size=size_name
